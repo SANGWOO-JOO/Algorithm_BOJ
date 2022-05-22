@@ -1,13 +1,13 @@
-N=int(input())    
-
+import sys
+N = int(sys.stdin.readline())
 for i in range(N):
-    OX=input()    
-    ans=0
-    cnt=0
-    for j in OX :
-        if j == "O" :
-            cnt+=1
-            ans+=cnt
-        else :
-            cnt=0
-    print(ans)
+    quiz_result = sys.stdin.readline()
+    accum = 1
+    score = 0
+    for q in quiz_result:
+        if q == 'O':
+            score += accum
+            accum += 1
+        else:
+            accum = 1
+    print(score)
